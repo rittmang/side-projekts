@@ -1,11 +1,11 @@
 import { LitElement, html, css } from 'lit';
 import { property, customElement } from 'lit/decorators.js';
 
-const logo = new URL('../../assets/bg-2.jpg', import.meta.url).href;
+const logo = new URL('../../assets/bg-3.png', import.meta.url).href;
 
 @customElement('index-sp')
 export class IndexSp extends LitElement {
-  @property({ type: String }) header = 'Side Projekts';
+  @property({ type: String }) header = 'side projekts';
 
   static styles = css`
     :host {
@@ -17,6 +17,7 @@ export class IndexSp extends LitElement {
       color: #ffffff;
       margin: 0 auto;
       text-align: left;
+      user-select:none;
     }
 
     main {
@@ -24,12 +25,14 @@ export class IndexSp extends LitElement {
       margin-right: auto;
       margin-top: calc(15vh);
       margin-bottom: auto;
+      font-size: calc(10px + 3.1vmin);
+
     }
 
     .logo {
       margin-top: 12px;
       animation: app-logo-spin infinite 10s linear;
-      font-size: calc(10px + 10vmin);
+      font-size: calc(10px + 8vmin);
     }
 
     @keyframes app-logo-spin {
@@ -65,8 +68,11 @@ export class IndexSp extends LitElement {
     }
 
     .app-footer a {
-      margin-left: 5px;
+      margin-left: 0px;
+      text-decoration:none;
+      color: white;
     }
+
   `;
 
   render() {
@@ -82,18 +88,17 @@ export class IndexSp extends LitElement {
       </style>
       <main>
         <div class="logo">🚀</div>
-        <h1>${this.header}</h1>
+        <h1 style="display:table-caption;">${this.header}</h1>
         <div class="button-row">
           <a href="https://share.sideprojekts.com/submit" target="_blank"
             >Submit my projekt</a
           >
-          <a href="https://sideprojekts.substack.com/" target="_blank"
-            >Projekt Gallery</a
-          >
         </div>
       </main>
 
-      <p class="app-footer"></p>
+      <p class="app-footer">
+        built by <a href="https://go.rightonrittman.in/twitter" target="_blank">@rittmang</a> ✌🏼
+      </p>
     `;
   }
 }
