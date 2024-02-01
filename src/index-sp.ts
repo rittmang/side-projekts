@@ -9,10 +9,11 @@ export class IndexSp extends LitElement {
 
   static styles = css`
     :host {
-      min-height: 100vh;
+      min-height: 100svh;
       display: flex;
       flex-direction: column;
       align-items: center;
+      font-family:'Helvetica','Arial',sans-serif;
       font-size: calc(10px + 3vmin);
       color: #ffffff;
       margin: 0 auto;
@@ -55,7 +56,6 @@ export class IndexSp extends LitElement {
       padding: 5px 15px; /* Padding around the text */
       text-align: center; /* Center the text */
       text-decoration: none; /* No underline */
-      display: inline-block; /* Make it inline-block */
       font-size: calc(10px + 1vmin); /* Set font size */
       cursor: pointer; /* Cursor to pointer on hover */
       border: none; /* No border */
@@ -92,6 +92,9 @@ export class IndexSp extends LitElement {
         <div class="button-row">
           <a href="https://share.sideprojekts.com/submit" target="_blank"
             >Submit my projekt</a
+          >
+          <a style="background-color: #00000066;" href="https://share.sideprojekts.com/x-twitter" target="_blank"
+            >𝕏</a
           >
         </div>
       </main>
