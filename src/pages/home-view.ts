@@ -1,5 +1,7 @@
 import { LitElement, html, css } from "lit";
 import { property, customElement } from 'lit/decorators.js';
+import { unsafeHTML } from 'lit-html/directives/unsafe-html.js';
+
 
 const logo = new URL('../../../assets/bg-4.jpeg', import.meta.url).href;
 
@@ -19,6 +21,39 @@ export class Home extends LitElement {
       margin: 0 auto;
       text-align: left;
       user-select:none;
+    }
+
+    .announcement-bar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      padding: 10px 0;
+      text-align: center;
+      font-size: calc(8px + 1vmin);
+      z-index: 10; /* Ensures the bar stays above other elements */
+      background: rgba(255, 255, 255, 0.2); /* Semi-transparent background for glassmorphic effect */
+      backdrop-filter: blur(10px); /* Blur effect to create the glass look */
+      -webkit-backdrop-filter: blur(10px); /* Safari support for blur effect */
+      border: 0px solid rgba(255, 255, 255, 0.3); /* Border to enhance the glass effect */
+      color: white;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    }
+
+    .announcement-bar a {
+      text-decoration: none; /* Remove underline from link */
+      color: inherit; /* Inherit text color from parent element */
+      display: flex; /* Use flexbox for alignment */
+      justify-content: center; /* Center content horizontally */
+      align-items: center; /* Center content vertically */
+      width: 100%; /* Ensure full width clickable area */
+      height: 100%; /* Ensure full height clickable area */
+    }
+
+    .arrow-icon {
+      font-size: calc(4px + 1vmin);
+      margin-left: 5px; /* Add some space between text and arrow */
+      vertical-align: middle; /* Align the icon vertically in line with the text */
     }
 
     main {
@@ -87,6 +122,11 @@ export class Home extends LitElement {
         }
       </style>
       <main>
+        <div class="announcement-bar">
+        <a href="https://share.sideprojekts.com/showcase">
+          showcase #001 announced
+        </a>
+      </div>
         <div class="logo">🚀</div>
         <h1 style="display:table-caption;">${this.header}</h1>
         <div class="button-row">

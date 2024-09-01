@@ -3,9 +3,9 @@ import { property, customElement } from 'lit/decorators.js';
 
 const logo = new URL('../../../assets/bg-4.jpeg', import.meta.url).href;
 
-@customElement('gallery-view')
-export class Gallery extends LitElement {
-  @property({ type: String }) header = 'gallery';
+@customElement('events-view')
+export class Events extends LitElement {
+  @property({ type: String }) header = 'events';
 
   static styles = css`
     :host {
@@ -34,15 +34,6 @@ export class Gallery extends LitElement {
       margin-top: 12px;
       animation: app-logo-spin infinite 10s linear;
       font-size: calc(10px + 8vmin);
-    }
-
-    @keyframes app-logo-spin {
-      from {
-        transform: rotate(0deg);
-      }
-      to {
-        transform: rotate(360deg);
-      }
     }
 
     .button-row {
@@ -87,16 +78,19 @@ export class Gallery extends LitElement {
         }
       </style>
       <main>
-        <div class="logo">🚀</div>
+        <div class="logo">🔥</div>
         <h1 style="display:table-caption;">${this.header}</h1>
-        <div class="button-row">
-          <a href="https://share.sideprojekts.com/submit" target="_blank"
-            >Submit my projekt</a
-          >
-          <a style="background-color: #00000066;" href="https://share.sideprojekts.com/x-twitter" target="_blank"
-            >𝕏</a
-          >
-        </div>
+        <iframe
+            src="https://lu.ma/embed/calendar/cal-I59dO23qSyVHPFx/events?compact=true"
+            width="450"
+            height="250"
+            frameborder="0"
+            style="border: 4px solid #bfcbda88; border-radius: 24px;"
+            allowfullscreen=""
+            aria-hidden="false"
+            tabindex="0"
+            >
+        </iframe>
       </main>
 
       <p class="app-footer">
