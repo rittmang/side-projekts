@@ -1,13 +1,13 @@
 import { LitElement, html, css } from "lit";
 import { property, customElement } from 'lit/decorators.js';
 
-const logo = new URL('../../../assets/bg-3.png', import.meta.url).href;
+const logo = new URL('../../../assets/bg-4.jpeg', import.meta.url).href;
 
 @customElement('home-view')
 export class Home extends LitElement {
-    @property({ type: String }) header = 'side projekts';
+  @property({ type: String }) header = 'side projekts';
 
-    static styles = css`
+  static styles = css`
     :host {
       min-height: 100svh;
       display: flex;
@@ -75,8 +75,8 @@ export class Home extends LitElement {
 
   `;
 
-    render() {
-        return html`
+  render() {
+    return html`
       <style>
         :host {
           background-color: var(--index-sp-background-color, #3b3458);
@@ -103,5 +103,5 @@ export class Home extends LitElement {
         built by <a href="https://go.rightonrittman.in/twitter" target="_blank">@rittmang</a> ✌🏼
       </p>
     `;
-    }
+  }
 }
