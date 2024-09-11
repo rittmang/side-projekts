@@ -32,12 +32,14 @@ export class Home extends LitElement {
       text-align: center;
       font-size: calc(8px + 1vmin);
       z-index: 10; /* Ensures the bar stays above other elements */
-      background: rgba(255, 255, 255, 0.2); /* Semi-transparent background for glassmorphic effect */
-      backdrop-filter: blur(10px); /* Blur effect to create the glass look */
-      -webkit-backdrop-filter: blur(10px); /* Safari support for blur effect */
+      // background: rgba(255, 255, 255, 0.2); /* Semi-transparent background for glassmorphic effect */
+      background: red ;
+      //backdrop-filter: blur(10px); /* Blur effect to create the glass look */
+      //-webkit-backdrop-filter: blur(10px); /* Safari support for blur effect */
       border: 0px solid rgba(255, 255, 255, 0.3); /* Border to enhance the glass effect */
       color: white;
       box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+      font: 1rem 'Arial', sans-serif; /* Font for the text */
     }
 
     .announcement-bar a {
@@ -124,7 +126,10 @@ export class Home extends LitElement {
       <main>
         <div class="announcement-bar">
         <a href="https://share.sideprojekts.com/showcase">
-          showcase #001 announced
+          <div>
+            showcase #001 announced 
+            <b>#SFTechWeek</b>
+          </div>
         </a>
       </div>
         <div class="logo">🚀</div>
