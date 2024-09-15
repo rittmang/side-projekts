@@ -125,7 +125,7 @@ export class Home extends LitElement {
       </style>
       <main>
         <div class="announcement-bar">
-        <a href="https://share.sideprojekts.com/showcase">
+        <a href="https://share.sideprojekts.com/showcase?utm_source=sideprojekts-banner">
           <div>
             showcase #001 announced 
             <b>#SFTechWeek</b>
