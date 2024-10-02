@@ -8,6 +8,8 @@ const logo = new URL('../../../assets/bg-4.jpeg', import.meta.url).href;
 @customElement('home-view')
 export class Home extends LitElement {
   @property({ type: String }) header = 'side projekts';
+  @property({ type: String }) countdown = this.calculateCountdown();
+
 
   static styles = css`
     :host {
@@ -112,6 +114,52 @@ export class Home extends LitElement {
 
   `;
 
+  firstUpdated() {
+    this.startCountdown();
+  }
+
+  calculateCountdown() {
+    const targetDate = new Date('October 12, 2024 19:30:00 PST');
+    const now = new Date();
+
+    const timeDifference = targetDate.getTime() - now.getTime();
+
+    const days = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
+    const hours = Math.floor(
+      (timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+    );
+    const minutes = Math.floor((timeDifference % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((timeDifference % (1000 * 60)) / 1000);
+
+    let countdownString = "";
+
+    if (days > 0) {
+      countdownString += `${days} DAY${days > 1 ? 'S' : ''} `;
+    }
+    else if (hours > 0) {
+      countdownString += `${hours} HOUR${hours > 1 ? 'S' : ''} `;
+    }
+    else if (minutes > 0) {
+      countdownString += `${minutes} MINUTE${minutes > 1 ? 'S' : ''} `;
+    }
+    else if (seconds > 0 && days === 0 && hours === 0) {
+      // Only show seconds if there are less than an hour remaining.
+      countdownString += `${seconds} SECOND${seconds > 1 ? 'S' : ''} `;
+    }
+
+    if (timeDifference > 0) {
+      return countdownString.trim(); // Trim any trailing spaces
+    } else {
+      return "Event has started!";
+    }
+  }
+
+  startCountdown() {
+    setInterval(() => {
+      this.countdown = this.calculateCountdown();
+    }, 1000);
+  }
+
   render() {
     return html`
       <style>
@@ -127,8 +175,8 @@ export class Home extends LitElement {
         <div class="announcement-bar">
         <a href="https://share.sideprojekts.com/showcase?utm_source=sideprojekts-banner">
           <div>
-            showcase #001 announced 
-            <b>#SFTechWeek</b>
+            showcase #001 in ${this.countdown}
+            <b style="margin-left:4px;">#SFTechWeek</b>
           </div>
         </a>
       </div>
