@@ -100,7 +100,7 @@ export class Gallery extends LitElement {
       </main>
 
       <p class="app-footer">
-        built by <a href="https://go.rightonrittman.in/twitter" target="_blank">@rittmang</a> ✌🏼
+        built by <a href="https://go.rightonrittman.in/twitter" target="_blank">@rittmang</a> & <a href="https://www.linkedin.com/in/rujulwalvekar/" target="_blank">@rujulwalvekar</a>
       </p>
     `;
   }
