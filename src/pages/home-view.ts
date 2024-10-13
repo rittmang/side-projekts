@@ -159,6 +159,14 @@ export class Home extends LitElement {
       this.countdown = this.calculateCountdown();
     }, 1000);
   }
+  // <div class="announcement-bar">
+  //         <a href="https://share.sideprojekts.com/showcase?utm_source=sideprojekts-banner">
+  //           <div>
+  //             showcase #001 in ${this.countdown}
+  //             <b style="margin-left:4px;">#SFTechWeek</b>
+  //           </div>
+  //         </a>
+  //       </div>
 
   render() {
     return html`
@@ -172,14 +180,7 @@ export class Home extends LitElement {
         }
       </style>
       <main>
-        <div class="announcement-bar">
-        <a href="https://share.sideprojekts.com/showcase?utm_source=sideprojekts-banner">
-          <div>
-            showcase #001 in ${this.countdown}
-            <b style="margin-left:4px;">#SFTechWeek</b>
-          </div>
-        </a>
-      </div>
+        
         <div class="logo">🚀</div>
         <h1 style="display:table-caption;">${this.header}</h1>
         <div class="button-row">
